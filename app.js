@@ -97,7 +97,8 @@ app.use('/authorization-code/callback',
   // https://github.com/jaredhanson/passport/issues/458
   passport.authenticate('oidc', { failureMessage: true, failWithError: true }),
   (req, res) => {
-    res.redirect('/profile');
+    console.log("authorized called back "); //+ qs.parse(req.params));
+    res.redirect('/profile' + req.url);
   }
 );
 
