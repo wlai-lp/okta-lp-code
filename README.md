@@ -1,3 +1,23 @@
+# Wei readme
+Install okta cli tool
+
+`brew install --cask oktadeveloper/tap/okta`
+
+- Login to okta dev account, 
+    - create okta cli api key
+
+- use Okta cli 
+    - `okta login` (use okta domain and cli api key)
+    - `okta start express` (cli creates a express folder)
+
+- cd to `express` folder
+
+- `npm install`
+- `npm start run`
+- access localhost port 3000
+
+			
+
 # Node.js Express Quickstart Sample Code for Integrating with Okta using the Redirect Model
 
 This repository contains a sample of integrating with [Okta](https://www.okta.com/) for authentication using [the redirect model in a Node.js Express app](https://developer.okta.com/docs/guides/sign-into-web-app-redirect/node-express/main/).
