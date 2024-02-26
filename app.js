@@ -110,7 +110,8 @@ app.use('/authorization-code/callback', (req, res) => {
 
 app.use('/profile2', (req, res) => {
   // res.send('Hello, login user! with auth code ' + req.url);
-  res.render('profile2', {code: req.url});
+  let code = (new URLSearchParams(req.url)).get('/?code')
+  res.render('profile2', {code: code});
 });
 
 app.use('/profile', ensureLoggedIn, (req, res) => {
