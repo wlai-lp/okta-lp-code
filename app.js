@@ -93,14 +93,25 @@ app.use('/', indexRouter);
 
 app.use('/login', passport.authenticate('oidc'));
 
-app.use('/authorization-code/callback',
-  // https://github.com/jaredhanson/passport/issues/458
-  passport.authenticate('oidc', { failureMessage: true, failWithError: true }),
-  (req, res) => {
+// app.use('/authorization-code/callback',
+//   // https://github.com/jaredhanson/passport/issues/458
+//   passport.authenticate('oidc', { failureMessage: true, failWithError: true }),
+//   (req, res) => {
+//     console.log("authorized called back "); //+ qs.parse(req.params));
+//     res.redirect('/profile' + req.url);
+//   }
+// );
+
+app.use('/authorization-code/callback', (req, res) => {
     console.log("authorized called back "); //+ qs.parse(req.params));
-    res.redirect('/profile' + req.url);
+    res.redirect('/profile2' + req.url);
   }
 );
+
+app.use('/profile2', (req, res) => {
+  // res.send('Hello, login user! with auth code ' + req.url);
+  res.render('profile2', {code: req.url});
+});
 
 app.use('/profile', ensureLoggedIn, (req, res) => {
   res.render('profile', { authenticated: req.isAuthenticated(), user: req.user });
