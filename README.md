@@ -4,6 +4,14 @@
 > Okta interface only allows code flow if it's clinet / server app
 > make sure to use that to create the app
 > after that, run the app, after login, you should see the auth code returned
+> this works with my okta-express-sample okta app
+
+```
+JWT issuer (iss) : https://dev-24350261.okta.com/
+Auth End point : https://dev-24350261.okta.com/oauth2/v1/authorize
+Token Endpoint : https://dev-24350261.okta.com/oauth2/v1/token
+IDP JWKS endpoint : https://dev-24350261.okta.com/oauth2/v1/keys?client_id=0oafcjy54iDSLtlTn5d7
+```
 
 Install okta cli tool
 
