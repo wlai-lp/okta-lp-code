@@ -1,4 +1,10 @@
-# Wei readme
+# Wei README
+
+> This works with Okta Code Flow (no PKCE) client application
+> Okta interface only allows code flow if it's clinet / server app
+> make sure to use that to create the app
+> after that, run the app, after login, you should see the auth code returned
+
 Install okta cli tool
 
 `brew install --cask oktadeveloper/tap/okta`
